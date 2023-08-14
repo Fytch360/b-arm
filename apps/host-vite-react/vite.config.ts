@@ -5,6 +5,8 @@ import { defineConfig } from "vite";
 const remoteViteReactUrl =
   process.env.REMOTE_VITE_REACT_URL || `http://localhost:3021`;
 
+const tsUrl = "http://localhost:5173";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -15,6 +17,7 @@ export default defineConfig({
       // Modules to expose
       remotes: {
         remote_vite_react: `${remoteViteReactUrl}/assets/remoteEntry.js`,
+        remote_vite_react_ts: `${tsUrl}/assets/remoteEntry.js`,
       },
       shared: [],
     }),
